@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8" />
+  <script src="https://code.angularjs.org/1.4.8/angular.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+
+app.controller('MainCtrl', function($scope) {
+
+  $scope.myField;
+
+  result = {};
+  result.data = {
+    "key1": {
+      firstName: "6",
+      lastName: "8",
+      Id: "19",
+      select: "10"
+    },
+    "key2": {
+      firstName: "1",
+      lastName: "11",
+      Id: "39",
+      select: "11"
+    },
+    "key3": {
+      firstName: "2",
+      lastName: "22",
+      Id: "29",
+      select: "12"
+    }
+  };
+
+  $scope.fieldFieldOptions = result.data;
+
+});
+</script></head>
+
+<body ng-controller="MainCtrl">
+
+  <div>
+    <select class="form-control" name="myField" ng-model="myField" 
+    ng-options="key as key for (key, item) in fieldFieldOptions" 
+    ng-required="myAllFiles=='NO'">
+    </select>
+  </div>
+  <pre>fieldFieldOptions = {{fieldFieldOptions | json}}</pre>
+  <pre>myField = {{myField | json}}</pre>
+
+</body>
+
+</html>

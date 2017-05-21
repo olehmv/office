@@ -1,0 +1,105 @@
+<div>
+		<li style=color:red>{{$ctrl.error.data.ex}}</li>
+
+	<ul>
+		<li>{{$ctrl.manager.id}}</li>
+		<li>{{$ctrl.manager.firstName}}</li>
+		<li>{{$ctrl.manager.lastName}}</li>
+		<li>{{$ctrl.manager.department}}</li>
+		<div ng-show="$ctrl.editeManager" class="">
+			<form class="">
+				<div class="">
+					<div class="">
+						<label class="">First Name</label>
+						<div class="">
+							<input type="text" ng-model="$ctrl.manager.firstName" class=""
+								placeholder="Enter  firstname" />
+						</div>
+					</div>
+				</div>
+				<div class="">
+					<div class="">
+						<label class="">Last Name</label>
+						<div class="">
+							<input type="text" ng-model="$ctrl.manager.lastName" class=""
+								placeholder="Enter  lastname" />
+						</div>
+					</div>
+				</div>
+				<div class="">
+					<select
+						ng-options="departement as departement for departement in $ctrl.departments"
+						ng-model="$ctrl.manager.department"></select>
+				</div>
+
+				<div class="">
+					<div class="">
+						<button type="button" ng-click="$ctrl.updateManager()" class="">Update</button>
+						<button type="button" ng-click="$ctrl.deleteManager()" class="">Remove</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<li><button ng-hide="$ctrl.editeManager" ng-click="$ctrl.edit()"
+				type="button" class="">Edit Manager</button></li>
+		<div ng-show="$ctrl.addEmployee">
+			<form ng-submit="$ctrl.addEmployee()" class="">
+				<div class="">
+					<div class="">
+						<label class="">First Name</label>
+						<div class="">
+							<input type="text" ng-model="$ctrl.employee.firstName" class=""
+								placeholder="Enter  firstname" />
+						</div>
+					</div>
+				</div>
+				<div class="">
+					<div class="">
+						<label class="">Last Name</label>
+						<div class="">
+							<input type="text" ng-model="$ctrl.employee.lastName" class=""
+								placeholder="Enter  lastname" />
+						</div>
+					</div>
+				</div>
+
+
+				<div class="">
+					Select from office
+					<div class="">
+						<select
+							ng-options="employee as employee.firstName for employee in $ctrl.employees track by employee.id"
+							ng-model="$ctrl.employee"></select>
+					</div>
+				</div>
+
+
+				<div class="">
+					<div class="">
+						<input type="submit" value="Add Employee">
+					</div>
+				</div>
+				<div class="">
+					<div class="">
+						<button
+							ng-click="$ctrl.reset()" type="button" class="">
+							Reset </button>
+					</div>
+				</div>
+			</form>
+			<li><button ng-hide="$ctrl.addEmployee"
+					ng-click="$ctrl.showAddEmployeeForm()" type="button" class="">Add
+					employee</button></li>
+		</div>
+		<li>{{$ctrl.error.ex}}</li>
+		<ul ng-show="$ctrl.newEmployee">
+			<li>New Employee</li>
+			<li>{{$ctrl.employee.id}}</li>
+			<li>{{$ctrl.employee.firstName}}</li>
+			<li>{{$ctrl.employee.lastName}}</li>
+			<li>{{$ctrl.employee.manager.department}}</li>
+		</ul>
+		<li><a href="#!/managers/{{$ctrl.manager.id}}/employees">manager
+				employees</a></li>
+	</ul>
+</div>

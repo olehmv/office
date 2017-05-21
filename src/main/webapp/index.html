@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="officeApp">
+<head>
+<meta charset="utf-8">
+<title>Office</title>
+
+</head>
+<body>
+	<div class="view-container">
+		<div ng-view class="view-frame"></div>
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+	<script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
+
+	<script type="text/javascript" src="officejs/app.module.js"></script>
+	<script type="text/javascript" src="officejs/app.config.js"></script>
+	<script type="text/javascript" src="officejs/office/office.module.js"></script>
+	<script type="text/javascript" src="officejs/office/manager.service.js"></script>
+	<script type="text/javascript" src="officejs/office/employee.service.js"></script>
+
+	<script type="text/javascript"
+		src="officejs/manager-list/manager-list.module.js"></script>
+	<script type="text/javascript"
+		src="officejs/manager-list/manager-list.component.js"></script>
+	<script type="text/javascript"
+		src="officejs/manager-detail/manager-detail.module.js"></script>
+	<script type="text/javascript"
+		src="officejs/manager-detail/manager-detail.component.js"></script>
+	<script type="text/javascript"
+		src="officejs/manager-employees/manager-employees.module.js"></script>
+	<script type="text/javascript"
+		src="officejs/manager-employees/manager-employees.component.js"></script>
+	<script type="text/javascript"
+		src="officejs/employee-detail/employee-detail.module.js"></script>
+	<script type="text/javascript"
+		src="officejs/employee-detail/employee-detail.component.js"></script>
+
+</body>
+
+
+
+</html>

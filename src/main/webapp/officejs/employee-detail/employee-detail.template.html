@@ -1,0 +1,43 @@
+
+		<li style=color:red>{{$ctrl.error.data.ex}}</li>
+<div class="">
+	<div class="">
+		<form ng-submit="$ctrl.submit()" class="">
+			<div class="">
+				<div class="">
+					<label class="">First Name</label>
+					<div class="">
+						<input type="text" ng-model="$ctrl.employee.firstName" class=""
+							placeholder="Enter  firstname" />
+					</div>
+				</div>
+			</div>
+			<div class="">
+				<div class="">
+					<label class="">Last Name</label>
+					<div class="">
+						<input type="text" ng-model="$ctrl.employee.lastName" class=""
+							placeholder="Enter  lastname" />
+					</div>
+				</div>
+			</div>
+			
+			<div class="">
+				<div class="">
+					<select
+						ng-options="manager as manager.firstName for manager in $ctrl.managers track by manager.id"
+						ng-model="$ctrl.employee.manager"></select>
+				</div>
+			</div>
+
+			<div class="">
+				<div class="">
+					<input type="submit" value="Update">
+					<button type="button" ng-click="$ctrl.updateEmployee()" class="">Update</button>
+
+					<button type="button" ng-click="$ctrl.deleteEmployee()" class="">Remove</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

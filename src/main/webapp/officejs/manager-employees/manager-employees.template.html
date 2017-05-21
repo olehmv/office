@@ -1,0 +1,13 @@
+<div>
+	<ul ng-repeat="employee in $ctrl.manager.list">
+		<li>{{ employee.firstName}}</li>
+		<li>{{ employee.lastName}}</li>
+		<li>{{ employee.manager.firstName}}</li>
+		<li>{{ employee.manager.department}}</li>
+		<li><a
+			href="#!/managers/{{$ctrl.manager.id}}/employees/{{employee.id}}"><button
+					type="button" class="">Edit</button></a></li>
+
+	</ul>
+</div>
+
